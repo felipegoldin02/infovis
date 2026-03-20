@@ -5,17 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Infovis - Newell's Old Boys</title>
   <style>
-   
     body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000; 
-      color: #fff; 
-      line-height: 1.6;
+      background-color: #000; /* Fondo negro de respaldo */
+      color: #fff;
     }
 
-    
+    /* CAPA DE FONDO CON LA URL CORREGIDA */
     body::before {
       content: "";
       position: fixed;
@@ -23,40 +21,59 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('https://copaargentina.s3.amazonaws.com/images/m114586_crop169014_1024x576_proportional_1695231319436C.jpg'); 
+      /* Usamos la URL que pasaste */
+      background-image: url('https://copaargentina.s3.amazonaws.com/images/m114586_crop169014_1024x576_proportional_1695231319436C.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       
-     
-      opacity: 0.35; 
+      /* TRANSPARENCIA: 0.3 es un 30% de visibilidad. Subilo si la querés más fuerte */
+      opacity: 0.3; 
       
-      z-index: -1; 
+      /* Opcional: Desenfoque para que los gráficos resalten más */
+      filter: blur(2px); 
+      
+      z-index: -1;
     }
 
-    
+    /* Contenedor principal con efecto de transparencia */
     main {
       max-width: 900px;
       margin: 20px auto;
-      padding: 20px;
-     
-      background: rgba(0, 0, 0, 0.7); 
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.75); /* Fondo negro semi-transparente */
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     }
 
     header {
       text-align: center; 
-      padding: 40px 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      padding: 50px 20px;
     }
 
-    h1 { font-size: 2.5rem; color: #e62117; } 
-    h2 { border-bottom: 2px solid #e62117; padding-bottom: 10px; }
-    hr { border: 0; height: 1px; background: #444; margin: 40px 0; }
+    h1 { 
+      font-size: 3rem; 
+      color: #e62117; 
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+    }
 
-    
-    object { max-width: 100%; height: auto; }
+    h2 { 
+      border-left: 5px solid #e62117; 
+      padding-left: 15px; 
+      margin-top: 40px;
+    }
+
+    hr { border: 0; height: 1px; background: #333; margin: 50px 0; }
+
+    /* Estilo para los embeds */
+    .viz-container {
+      background: white; /* Algunos gráficos se ven mejor sobre blanco */
+      padding: 10px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -70,8 +87,10 @@
     
     <section>
       <h2>Tendencias Principales</h2>
-      <div class="flourish-embed flourish-chart" data-src="visualisation/28055442">
-        <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <div class="viz-container">
+        <div class="flourish-embed flourish-chart" data-src="visualisation/28055442">
+          <script src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
       </div>
     </section>
 
@@ -79,8 +98,8 @@
 
     <section>
       <h2>Mapa de Ídolos</h2>
-      <div style="width: 100%; height: auto; text-align: center;">
-        <object type="image/svg+xml" data="./IdolosNewells.svg"></object>
+      <div style="width: 100%; text-align: center; padding: 20px 0;">
+        <object type="image/svg+xml" data="./IdolosNewells.svg" style="width: 100%; max-width: 700px;"></object>
       </div>
     </section>
 
@@ -88,8 +107,10 @@
 
     <section>
       <h2>Comparativa de Estadísticas</h2>
-      <div style="min-height:615px" id="datawrapper-vis-oAVXw">
-        <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/oAVXw/embed.js" charset="utf-8" data-target="#datawrapper-vis-oAVXw"></script>
+      <div class="viz-container">
+        <div style="min-height:615px" id="datawrapper-vis-oAVXw">
+          <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/oAVXw/embed.js" charset="utf-8" data-target="#datawrapper-vis-oAVXw"></script>
+        </div>
       </div>
     </section>
 
