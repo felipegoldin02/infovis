@@ -9,17 +9,23 @@
   
   <style>
     :root {
-      --rojo-nob: #e62117;
-      --rojo-brillante: #ff2e22;
+      /* Rojo Newell's Académico: Más sobrio y profesional */
+      --rojo-nob: #d61a12; 
+      --blanco-puro: #ffffff;
+      --gris-suave: #f8f9fa;
+      --gris-texto: #cccccc;
     }
 
     body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: #000;
-      color: #f8f9fa;
+      color: var(--gris-texto);
       overflow-x: hidden;
     }
 
-    /* CAPA DE FONDO FIXA */
+    /* CAPA DE FONDO (Sutil y elegante) */
     body::before {
       content: "";
       position: fixed;
@@ -30,65 +36,97 @@
       background-image: url('https://copaargentina.s3.amazonaws.com/images/m114586_crop169014_1024x576_proportional_1695231319436C.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0.25; /* Bajé un poco la opacidad para que no compita con los datos */
-      filter: blur(3px);
+      background-repeat: no-repeat;
+      /* Opacidad baja (0.12) para que no distraiga en la clase */
+      opacity: 0.12; 
+      filter: blur(2px);
       z-index: -1;
     }
 
-    /* TÍTULO IMPACTANTE */
+    /* HEADER Y TÍTULO */
+    header {
+      padding: 60px 20px;
+    }
+
     h1 {
       font-weight: 900;
-      color: var(--rojo-brillante);
+      color: var(--blanco-puro); /* Blanco para legibilidad total */
       text-transform: uppercase;
-      text-shadow: 2px 2px 0px #000, 4px 4px 15px rgba(0,0,0,0.8);
-      letter-spacing: -1px;
+      letter-spacing: -1.5px;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+      font-size: calc(1.8rem + 2.5vw); /* Escalable para proyector */
     }
 
-    /* CONTENEDORES DE GRÁFICOS (Glassmorphism) */
+    .lead {
+      color: var(--rojo-nob); /* El rojo como acento en el subtítulo */
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* CONTENEDORES DE GRÁFICOS (Glassmorphism Oscuro) */
     .viz-card {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(15, 15, 15, 0.85);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 3rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 4rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     }
 
+    /* Fondo blanco solo para el área del gráfico */
     .viz-white-bg {
       background: white;
       padding: 15px;
-      border-radius: 12px;
+      border-radius: 6px;
       margin-top: 1.5rem;
+      border-bottom: 5px solid var(--rojo-nob);
     }
 
     h2 {
       font-weight: 700;
-      border-left: 6px solid var(--rojo-nob);
+      color: var(--blanco-puro);
+      border-left: 5px solid var(--rojo-nob);
       padding-left: 15px;
       margin-bottom: 1.5rem;
       font-size: 1.75rem;
     }
 
-    .lead {
-      color: #ccc;
-      font-weight: 400;
+    .section-desc {
+      color: var(--gris-texto);
+      font-size: 0.95rem;
+      margin-bottom: 0;
     }
 
-    /* Ajuste para que el SVG no se rompa */
+    /* Separadores */
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--rojo-nob), transparent);
+      margin: 3rem 0;
+      opacity: 0.5;
+    }
+
+    /* Ajuste de SVG e Imágenes */
     object {
       max-width: 100%;
       height: auto;
-      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    }
+
+    footer {
+      color: #666;
+      font-size: 0.8rem;
     }
   </style>
 </head>
 <body>
 
-  <header class="container text-center py-5">
+  <header class="container text-center">
     <div class="row justify-content-center">
       <div class="col-lg-10">
-        <h1 class="display-3 mb-2">Casi 15 años de sufrimiento por pasión</h1>
+        <h1>Casi 15 años de sufrimiento por pasión</h1>
         <p class="lead">Entrega de avance: Visualización de datos de Newell's Old Boys</p>
       </div>
     </div>
@@ -99,7 +137,7 @@
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
         <h2>Tendencias Principales</h2>
-        <p class="text-secondary small">Análisis evolutivo de rendimiento y efectividad.</p>
+        <p class="section-desc">Análisis de rendimiento histórico y efectividad en torneos locales.</p>
         <div class="viz-white-bg">
           <div class="flourish-embed flourish-chart" data-src="visualisation/28055442">
             <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -108,18 +146,24 @@
       </div>
     </section>
 
+    <hr>
+
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
         <h2>Mapa de Ídolos</h2>
-        <div class="text-center py-3">
+        <p class="section-desc">Representación visual de las figuras más influyentes del club.</p>
+        <div class="text-center py-4">
           <object type="image/svg+xml" data="./IdolosNewells.svg"></object>
         </div>
       </div>
     </section>
 
+    <hr>
+
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
         <h2>Comparativa de Estadísticas</h2>
+        <p class="section-desc">Desempeño detallado frente a rivales directos y promedios.</p>
         <div class="viz-white-bg">
           <div style="min-height:615px" id="datawrapper-vis-oAVXw">
             <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/oAVXw/embed.js" charset="utf-8" data-target="#datawrapper-vis-oAVXw"></script>
@@ -128,8 +172,8 @@
       </div>
     </section>
 
-    <footer class="text-center pb-5 text-secondary">
-      <small>&copy; 2026 - Trabajo de Visualización de Información</small>
+    <footer class="text-center pb-5">
+      <p>&copy; 2026 - Cátedra de Visualización de Información</p>
     </footer>
 
   </main>
