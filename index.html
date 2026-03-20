@@ -4,16 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Infovis - Newell's Old Boys</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000; /* Fondo negro de respaldo */
-      color: #fff;
+    :root {
+      --rojo-nob: #e62117;
+      --rojo-brillante: #ff2e22;
     }
 
-    /* CAPA DE FONDO CON LA URL CORREGIDA */
+    body {
+      background-color: #000;
+      color: #f8f9fa;
+      overflow-x: hidden;
+    }
+
+    /* CAPA DE FONDO FIXA */
     body::before {
       content: "";
       position: fixed;
@@ -21,100 +27,113 @@
       left: 0;
       width: 100%;
       height: 100%;
-      /* Usamos la URL que pasaste */
       background-image: url('https://copaargentina.s3.amazonaws.com/images/m114586_crop169014_1024x576_proportional_1695231319436C.jpg');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      
-      /* TRANSPARENCIA: 0.3 es un 30% de visibilidad. Subilo si la querés más fuerte */
-      opacity: 0.3; 
-      
-      /* Opcional: Desenfoque para que los gráficos resalten más */
-      filter: blur(2px); 
-      
+      opacity: 0.25; /* Bajé un poco la opacidad para que no compita con los datos */
+      filter: blur(3px);
       z-index: -1;
     }
 
-    /* Contenedor principal con efecto de transparencia */
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 30px;
-      background: rgba(0, 0, 0, 0.75); /* Fondo negro semi-transparente */
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    }
-
-    header {
-      text-align: center; 
-      padding: 50px 20px;
-    }
-
-    h1 { 
-      font-size: 3rem; 
-      color: #e62117; 
+    /* TÍTULO IMPACTANTE */
+    h1 {
+      font-weight: 900;
+      color: var(--rojo-brillante);
       text-transform: uppercase;
-      margin-bottom: 5px;
-      text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+      text-shadow: 2px 2px 0px #000, 4px 4px 15px rgba(0,0,0,0.8);
+      letter-spacing: -1px;
     }
 
-    h2 { 
-      border-left: 5px solid #e62117; 
-      padding-left: 15px; 
-      margin-top: 40px;
+    /* CONTENEDORES DE GRÁFICOS (Glassmorphism) */
+    .viz-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    hr { border: 0; height: 1px; background: #333; margin: 50px 0; }
+    .viz-white-bg {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+    }
 
-    /* Estilo para los embeds */
-    .viz-container {
-      background: white; /* Algunos gráficos se ven mejor sobre blanco */
-      padding: 10px;
-      border-radius: 8px;
-      margin-top: 20px;
+    h2 {
+      font-weight: 700;
+      border-left: 6px solid var(--rojo-nob);
+      padding-left: 15px;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+    }
+
+    .lead {
+      color: #ccc;
+      font-weight: 400;
+    }
+
+    /* Ajuste para que el SVG no se rompa */
+    object {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Casi 15 años de sufrimiento por pasión</h1>
-    <p>Entrega de avance: Visualización de datos de Newell's Old Boys</p>
+  <header class="container text-center py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h1 class="display-3 mb-2">Casi 15 años de sufrimiento por pasión</h1>
+        <p class="lead">Entrega de avance: Visualización de datos de Newell's Old Boys</p>
+      </div>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
     
-    <section>
-      <h2>Tendencias Principales</h2>
-      <div class="viz-container">
-        <div class="flourish-embed flourish-chart" data-src="visualisation/28055442">
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <section class="row justify-content-center">
+      <div class="col-lg-10 viz-card">
+        <h2>Tendencias Principales</h2>
+        <p class="text-secondary small">Análisis evolutivo de rendimiento y efectividad.</p>
+        <div class="viz-white-bg">
+          <div class="flourish-embed flourish-chart" data-src="visualisation/28055442">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+          </div>
         </div>
       </div>
     </section>
 
-    <hr>
-
-    <section>
-      <h2>Mapa de Ídolos</h2>
-      <div style="width: 100%; text-align: center; padding: 20px 0;">
-        <object type="image/svg+xml" data="./IdolosNewells.svg" style="width: 100%; max-width: 700px;"></object>
-      </div>
-    </section>
-
-    <hr>
-
-    <section>
-      <h2>Comparativa de Estadísticas</h2>
-      <div class="viz-container">
-        <div style="min-height:615px" id="datawrapper-vis-oAVXw">
-          <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/oAVXw/embed.js" charset="utf-8" data-target="#datawrapper-vis-oAVXw"></script>
+    <section class="row justify-content-center">
+      <div class="col-lg-10 viz-card">
+        <h2>Mapa de Ídolos</h2>
+        <div class="text-center py-3">
+          <object type="image/svg+xml" data="./IdolosNewells.svg"></object>
         </div>
       </div>
     </section>
+
+    <section class="row justify-content-center">
+      <div class="col-lg-10 viz-card">
+        <h2>Comparativa de Estadísticas</h2>
+        <div class="viz-white-bg">
+          <div style="min-height:615px" id="datawrapper-vis-oAVXw">
+            <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/oAVXw/embed.js" charset="utf-8" data-target="#datawrapper-vis-oAVXw"></script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center pb-5 text-secondary">
+      <small>&copy; 2026 - Trabajo de Visualización de Información</small>
+    </footer>
 
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
