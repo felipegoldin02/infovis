@@ -9,10 +9,8 @@
   
   <style>
     :root {
-      /* Rojo Newell's Académico: Más sobrio y profesional */
       --rojo-nob: #d61a12; 
-      --blanco-puro: #ffffff;
-      --gris-suave: #f8f9fa;
+      --blanco-suave: #f0f0f0; /* Blanco menos intenso para no cansar la vista */
       --gris-texto: #cccccc;
     }
 
@@ -25,7 +23,7 @@
       overflow-x: hidden;
     }
 
-    /* CAPA DE FONDO (Sutil y elegante) */
+    /* CAPA DE FONDO */
     body::before {
       content: "";
       position: fixed;
@@ -36,35 +34,35 @@
       background-image: url('https://copaargentina.s3.amazonaws.com/images/m114586_crop169014_1024x576_proportional_1695231319436C.jpg');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      /* Opacidad baja (0.12) para que no distraiga en la clase */
       opacity: 0.12; 
       filter: blur(2px);
       z-index: -1;
     }
 
-    /* HEADER Y TÍTULO */
     header {
       padding: 60px 20px;
     }
 
+    /* TÍTULO ACTUALIZADO: Menos "negrita" y más aireado */
     h1 {
-      font-weight: 900;
-      color: var(--blanco-puro); /* Blanco para legibilidad total */
+      font-weight: 700; /* Reducido de 900 a 700 para que no sea tan pesado */
+      color: var(--blanco-suave); 
       text-transform: uppercase;
-      letter-spacing: -1.5px;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-      font-size: calc(1.8rem + 2.5vw); /* Escalable para proyector */
+      letter-spacing: 1px; /* Espaciado positivo para dar elegancia */
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      font-size: calc(1.5rem + 2.2vw); 
+      margin-bottom: 15px;
     }
 
     .lead {
-      color: var(--rojo-nob); /* El rojo como acento en el subtítulo */
+      color: var(--rojo-nob);
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+      font-size: 1rem;
     }
 
-    /* CONTENEDORES DE GRÁFICOS (Glassmorphism Oscuro) */
+    /* CONTENEDORES DE GRÁFICOS */
     .viz-card {
       background: rgba(15, 15, 15, 0.85);
       backdrop-filter: blur(10px);
@@ -75,7 +73,6 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     }
 
-    /* Fondo blanco solo para el área del gráfico */
     .viz-white-bg {
       background: white;
       padding: 15px;
@@ -85,38 +82,34 @@
     }
 
     h2 {
-      font-weight: 700;
-      color: var(--blanco-puro);
+      font-weight: 600;
+      color: var(--blanco-suave);
       border-left: 5px solid var(--rojo-nob);
       padding-left: 15px;
       margin-bottom: 1.5rem;
-      font-size: 1.75rem;
+      font-size: 1.6rem;
     }
 
     .section-desc {
       color: var(--gris-texto);
-      font-size: 0.95rem;
-      margin-bottom: 0;
+      font-size: 0.9rem;
     }
 
-    /* Separadores */
     hr {
       border: 0;
       height: 1px;
       background: linear-gradient(to right, transparent, var(--rojo-nob), transparent);
       margin: 3rem 0;
-      opacity: 0.5;
+      opacity: 0.3;
     }
 
-    /* Ajuste de SVG e Imágenes */
     object {
       max-width: 100%;
       height: auto;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
     }
 
     footer {
-      color: #666;
+      color: #555;
       font-size: 0.8rem;
     }
   </style>
