@@ -23,7 +23,7 @@
       overflow-x: hidden;
     }
 
-    /* CAPA DE FONDO (Opacidad 0.22 para que se aprecie la foto de la Copa Argentina) */
+    /* CAPA DE FONDO (Opacidad 0.22) */
     body::before {
       content: "";
       position: fixed;
@@ -104,9 +104,15 @@
       opacity: 0.3;
     }
 
-    object, .tableauPlaceholder {
+    /* AJUSTE PARA EL SVG Y TABLEAU */
+    object[type="image/svg+xml"] {
       max-width: 100%;
       height: auto;
+      padding-bottom: 30px; /* Evita el corte de leyendas */
+    }
+
+    .tableauPlaceholder {
+      margin: 0 auto;
     }
 
     footer {
@@ -131,43 +137,32 @@
     <section class="row justify-content-center">
       <div class="col-lg-12 viz-card">
         <h2>Dashboard de Rendimiento Acumulado</h2>
-        <p class="section-desc">Visualización integrada de la efectividad por condición y balance general de resultados.</p>
+        <p class="section-desc">Visualización integrada de la efectividad por condición, balance de resultados y evolución de posiciones.</p>
         
         <div class="viz-white-bg d-flex justify-content-center" style="overflow-x: auto;">
           <div style="display: table; margin: 0 auto;">
             
-            <div class='tableauPlaceholder' id='viz1774123392892' style='position: relative'>
+            <div class='tableauPlaceholder' id='viz1774123811779' style='position: relative'>
               <noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Li&#47;Libro1_17741177017570&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
               <object class='tableauViz' style='display:none;'>
                 <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
                 <param name='embed_code_version' value='3' /> 
                 <param name='site_root' value='' />
                 <param name='name' value='Libro1_17741177017570&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
+                <param name='tabs' value='no' /><param name='toolbar' value='yes' />
                 <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Li&#47;Libro1_17741177017570&#47;Dashboard1&#47;1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='es-ES' />
-                <param name='filter' value='publish=yes' />
+                <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' />
               </object>
             </div>                
             <script type='text/javascript'>                    
-              var divElement = document.getElementById('viz1774123392892');                    
+              var divElement = document.getElementById('viz1774123811779');                    
               var vizElement = divElement.getElementsByTagName('object')[0];                    
               if ( divElement.offsetWidth > 800 ) { 
                 vizElement.style.width='1000px';
-                vizElement.style.minHeight='1027px';
-                vizElement.style.maxHeight='10027px';
-                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                vizElement.style.height='827px';
               } else if ( divElement.offsetWidth > 500 ) { 
                 vizElement.style.width='1000px';
-                vizElement.style.minHeight='1027px';
-                vizElement.style.maxHeight='10027px';
-                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                vizElement.style.height='827px';
               } else { 
                 vizElement.style.width='100%';
                 vizElement.style.height='927px';
@@ -203,7 +198,7 @@
         <h2>Confianza en los de la Casa</h2>
         <p class="section-desc">Análisis de puntos obtenidos según el sentido de pertenencia del cuerpo técnico.</p>
         <div class="text-center py-4">
-          <object type="image/svg+xml" data="./IdolosNewells.svg" style="width: 100%; max-width: 750px;"></object>
+          <object type="image/svg+xml" data="./IdolosNewells.svg" style="max-width: 750px;"></object>
         </div>
       </div>
     </section>
@@ -213,7 +208,7 @@
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
         <h2>Gestiones Institucionales</h2>
-        <p class="section-desc">Línea de tiempo de presidencias y balance de "éxito" por mandato.</p>
+        <p class="section-desc">Línea de tiempo de presidencias y balance de éxito deportivo por mandato.</p>
         <div class="viz-white-bg">
           <div style="min-height:192px; width: 100%;" id="datawrapper-vis-oAVXw">
             <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/oAVXw/embed.js" charset="utf-8" data-target="#datawrapper-vis-oAVXw"></script>
