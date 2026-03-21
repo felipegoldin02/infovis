@@ -15,221 +15,130 @@
     }
 
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #000;
       color: var(--gris-texto);
       overflow-x: hidden;
     }
 
-    /* CAPA DE FONDO (Opacidad 0.22) */
     body::before {
       content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background-image: url('https://copaargentina.s3.amazonaws.com/images/m114586_crop169014_1024x576_proportional_1695231319436C.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.22; 
-      filter: blur(1px);
-      z-index: -1;
+      background-size: cover; background-position: center;
+      opacity: 0.22; filter: blur(1px); z-index: -1;
     }
 
-    header {
-      padding: 60px 20px;
-    }
+    header { padding: 60px 20px; }
 
     h1 {
-      font-weight: 700; 
-      color: var(--blanco-suave); 
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-weight: 700; color: var(--blanco-suave); 
+      text-transform: uppercase; letter-spacing: 1px;
       text-shadow: 0 2px 12px rgba(0,0,0,0.9);
       font-size: calc(1.5rem + 2.2vw); 
-      margin-bottom: 15px;
     }
 
-    .lead {
-      color: var(--rojo-nob);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 1rem;
-    }
+    .lead { color: var(--rojo-nob); font-weight: 500; text-transform: uppercase; }
 
-    /* CONTENEDORES DE GRÁFICOS */
     .viz-card {
       background: rgba(15, 15, 15, 0.88);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
-      padding: 2.5rem;
-      margin-bottom: 4rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+      padding: 2.5rem; margin-bottom: 4rem;
     }
 
     .viz-white-bg {
       background: white;
-      padding: 20px;
+      padding: 30px;
       border-radius: 6px;
       margin-top: 1.5rem;
       border-bottom: 6px solid var(--rojo-nob);
+      /* FIX: Evita que cualquier cosa se corte */
+      overflow: visible !important;
     }
 
     h2 {
-      font-weight: 600;
-      color: var(--blanco-suave);
+      font-weight: 600; color: var(--blanco-suave);
       border-left: 5px solid var(--rojo-nob);
-      padding-left: 15px;
-      margin-bottom: 1.5rem;
-      font-size: 1.6rem;
+      padding-left: 15px; margin-bottom: 1.5rem;
     }
 
-    .section-desc {
-      color: var(--gris-texto);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
+    hr { background: linear-gradient(to right, transparent, var(--rojo-nob), transparent); opacity: 0.3; margin: 3rem 0; }
 
-    hr {
-      border: 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--rojo-nob), transparent);
-      margin: 3rem 0;
-      opacity: 0.3;
-    }
-
-    /* AJUSTE PARA EL SVG Y TABLEAU */
-    object[type="image/svg+xml"] {
-      max-width: 100%;
-      height: auto;
-      padding-bottom: 30px; /* Evita el corte de leyendas */
-    }
-
-    .tableauPlaceholder {
-      margin: 0 auto;
-    }
-
-    footer {
-      color: #666;
-      font-size: 0.85rem;
-    }
+    footer { color: #666; font-size: 0.85rem; padding-bottom: 50px; }
   </style>
 </head>
 <body>
 
   <header class="container text-center">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <h1>Casi 15 años de sufrimiento por pasión</h1>
-        <p class="lead">Visualización de datos de Newell's Old Boys 2012-2025</p>
-      </div>
-    </div>
+    <h1>Casi 15 años de sufrimiento por pasión</h1>
+    <p class="lead">Visualización de datos de Newell's Old Boys 2012-2025</p>
   </header>
 
   <main class="container">
     
     <section class="row justify-content-center">
-      <div class="col-lg-12 viz-card">
+      <div class="col-lg-12 viz-card text-center">
         <h2>Dashboard de Rendimiento Acumulado</h2>
-        <p class="section-desc">Visualización integrada de la efectividad por condición, balance de resultados y evolución de posiciones.</p>
-        
-        <div class="viz-white-bg" style="overflow-x: auto; display: block;">
+        <div class="viz-white-bg" style="overflow-x: auto;">
           <div style="width: 1000px; margin: 0 auto;">
-            
-            <div class='tableauPlaceholder' id='viz1774123811779' style='position: relative; width: 1000px; height: 827px;'>
-              <noscript>
-                <a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Li&#47;Libro1_17741177017570&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a>
-              </noscript>
-              <object class='tableauViz' style='display:none; width: 1000px; height: 827px;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                <param name='embed_code_version' value='3' /> 
-                <param name='site_root' value='' />
+            <div class='tableauPlaceholder' id='viz1774123811779' style='position: relative'>
+              <object class='tableauViz' style='display:none;'>
                 <param name='name' value='Libro1_17741177017570&#47;Dashboard1' />
-                <param name='tabs' value='no' />
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='site_root' value='' />
                 <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Li&#47;Libro1_17741177017570&#47;Dashboard1&#47;1.png' /> 
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='es-ES' />
-                <param name='filter' value='publish=yes' />
               </object>
             </div>                
-            
             <script type='text/javascript'>                    
               var divElement = document.getElementById('viz1774123811779');                    
               var vizElement = divElement.getElementsByTagName('object')[0];                    
-              
-              // Forzamos las dimensiones sin importar el tamaño de la pantalla
-              vizElement.style.width='1000px';
-              vizElement.style.height='827px';
-              
+              vizElement.style.width='1000px'; vizElement.style.height='827px';                    
               var scriptElement = document.createElement('script');                    
               scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
               vizElement.parentNode.insertBefore(scriptElement, vizElement);                
             </script>
-
           </div>
         </div>
       </div>
     </section>
 
-    <hr>
-
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
         <h2>Decaimiento Goleador por Ciclo</h2>
-        <p class="section-desc">Comparación de técnicos según su cuota goleadora e impacto en interinatos.</p>
         <div class="viz-white-bg">
-          <div class="flourish-embed flourish-chart" data-src="visualisation/28055442" style="width: 100%;">
+          <div class="flourish-embed" data-src="visualisation/28055442">
             <script src="https://public.flourish.studio/resources/embed.js"></script>
           </div>
         </div>
       </div>
     </section>
 
-    <hr>
-
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
         <h2>Confianza en los de la Casa</h2>
-        <p class="section-desc">Análisis de puntos obtenidos según el sentido de pertenencia del cuerpo técnico.</p>
-        
-        <div class="viz-white-bg" style="padding: 40px; overflow: visible;">
-          <div style="width: 100%; max-width: 750px; margin: 0 auto; aspect-ratio: 4/3;">
-            <object type="image/svg+xml" data="./IdolosNewells.svg" style="width: 100%; height: 100%; transform: scale(0.95); transform-origin: top center;">
-            </object>
-          </div>
+        <div class="viz-white-bg text-center" style="min-height: 600px;">
+          <object type="image/svg+xml" data="./IdolosNewells.svg" style="width: 100%; max-width: 700px; height: 500px; transform: scale(0.9); transform-origin: top center;"></object>
         </div>
-        
       </div>
     </section>
-
-    <hr>
 
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
         <h2>Gestiones Institucionales</h2>
-        <p class="section-desc">Línea de tiempo de presidencias y balance de éxito deportivo por mandato.</p>
         <div class="viz-white-bg">
-          <div style="min-height:192px; width: 100%;" id="datawrapper-vis-oAVXw">
+          <div style="min-height:192px;" id="datawrapper-vis-oAVXw">
             <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/oAVXw/embed.js" charset="utf-8" data-target="#datawrapper-vis-oAVXw"></script>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="text-center pb-5">
+    <footer class="text-center">
       <p>&copy; 2026 - Proyecto de Cátedra: Visualización de Información</p>
-      <small>Datos extraídos de registros oficiales de AFA y archivos históricos de NOB.</small>
     </footer>
 
   </main>
