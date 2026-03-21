@@ -23,7 +23,7 @@
       overflow-x: hidden;
     }
 
-    /* CAPA DE FONDO (0.22 de opacidad para que se note más la foto) */
+    /* CAPA DE FONDO (Opacidad 0.22 para que se aprecie la foto de la Copa Argentina) */
     body::before {
       content: "";
       position: fixed;
@@ -49,7 +49,7 @@
       color: var(--blanco-suave); 
       text-transform: uppercase;
       letter-spacing: 1px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
       font-size: calc(1.5rem + 2.2vw); 
       margin-bottom: 15px;
     }
@@ -62,8 +62,9 @@
       font-size: 1rem;
     }
 
+    /* CONTENEDORES DE GRÁFICOS */
     .viz-card {
-      background: rgba(15, 15, 15, 0.85);
+      background: rgba(15, 15, 15, 0.88);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 12px;
@@ -74,10 +75,10 @@
 
     .viz-white-bg {
       background: white;
-      padding: 25px;
+      padding: 20px;
       border-radius: 6px;
       margin-top: 1.5rem;
-      border-bottom: 5px solid var(--rojo-nob);
+      border-bottom: 6px solid var(--rojo-nob);
     }
 
     h2 {
@@ -92,6 +93,7 @@
     .section-desc {
       color: var(--gris-texto);
       font-size: 0.9rem;
+      margin-bottom: 1rem;
     }
 
     hr {
@@ -108,8 +110,8 @@
     }
 
     footer {
-      color: #555;
-      font-size: 0.8rem;
+      color: #666;
+      font-size: 0.85rem;
     }
   </style>
 </head>
@@ -127,31 +129,49 @@
   <main class="container">
     
     <section class="row justify-content-center">
-      <div class="col-lg-10 viz-card">
-        <h2>Dashboard de Rendimiento</h2>
-        <p class="section-desc">Análisis general de resultados y efectividad de los últimos años.</p>
+      <div class="col-lg-12 viz-card">
+        <h2>Dashboard de Rendimiento Acumulado</h2>
+        <p class="section-desc">Visualización integrada de la efectividad por condición y balance general de resultados.</p>
         
-        <div class="viz-white-bg d-flex justify-content-center align-items-center" style="overflow-x: auto;">
+        <div class="viz-white-bg d-flex justify-content-center" style="overflow-x: auto;">
           <div style="display: table; margin: 0 auto;">
             
-            <div class='tableauPlaceholder' id='viz1774118778747' style='position: relative'>
+            <div class='tableauPlaceholder' id='viz1774123392892' style='position: relative'>
               <noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Li&#47;Libro1_17741177017570&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript>
               <object class='tableauViz' style='display:none;'>
                 <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
                 <param name='embed_code_version' value='3' /> 
                 <param name='site_root' value='' />
                 <param name='name' value='Libro1_17741177017570&#47;Dashboard1' />
-                <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
                 <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Li&#47;Libro1_17741177017570&#47;Dashboard1&#47;1.png' /> 
-                <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='es-ES' />
+                <param name='filter' value='publish=yes' />
               </object>
             </div>                
             <script type='text/javascript'>                    
-              var divElement = document.getElementById('viz1774118778747');                    
+              var divElement = document.getElementById('viz1774123392892');                    
               var vizElement = divElement.getElementsByTagName('object')[0];                    
-              if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
-              else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
-              else { vizElement.style.width='100%';vizElement.style.height='727px';}                     
+              if ( divElement.offsetWidth > 800 ) { 
+                vizElement.style.width='1000px';
+                vizElement.style.minHeight='1027px';
+                vizElement.style.maxHeight='10027px';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+              } else if ( divElement.offsetWidth > 500 ) { 
+                vizElement.style.width='1000px';
+                vizElement.style.minHeight='1027px';
+                vizElement.style.maxHeight='10027px';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+              } else { 
+                vizElement.style.width='100%';
+                vizElement.style.height='927px';
+              }                     
               var scriptElement = document.createElement('script');                    
               scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
               vizElement.parentNode.insertBefore(scriptElement, vizElement);                
@@ -166,8 +186,8 @@
 
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
-        <h2>Decaimiento goleador</h2>
-        <p class="section-desc">Comparación técnicos por cuota goleadora e interinatos.</p>
+        <h2>Decaimiento Goleador por Ciclo</h2>
+        <p class="section-desc">Comparación de técnicos según su cuota goleadora e impacto en interinatos.</p>
         <div class="viz-white-bg">
           <div class="flourish-embed flourish-chart" data-src="visualisation/28055442" style="width: 100%;">
             <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -180,10 +200,10 @@
 
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
-        <h2>Confianza en los de la casa</h2>
-        <p class="section-desc">Muestra del promedio de puntos viendo si la localía afecta a los técnicos "ídolos".</p>
+        <h2>Confianza en los de la Casa</h2>
+        <p class="section-desc">Análisis de puntos obtenidos según el sentido de pertenencia del cuerpo técnico.</p>
         <div class="text-center py-4">
-          <object type="image/svg+xml" data="./IdolosNewells.svg"></object>
+          <object type="image/svg+xml" data="./IdolosNewells.svg" style="width: 100%; max-width: 750px;"></object>
         </div>
       </div>
     </section>
@@ -192,8 +212,8 @@
 
     <section class="row justify-content-center">
       <div class="col-lg-10 viz-card">
-        <h2>Presidencias a lo largo del tiempo</h2>
-        <p class="section-desc">Análisis de gestión institucional y resultados acumulados.</p>
+        <h2>Gestiones Institucionales</h2>
+        <p class="section-desc">Línea de tiempo de presidencias y balance de "éxito" por mandato.</p>
         <div class="viz-white-bg">
           <div style="min-height:192px; width: 100%;" id="datawrapper-vis-oAVXw">
             <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/oAVXw/embed.js" charset="utf-8" data-target="#datawrapper-vis-oAVXw"></script>
@@ -203,7 +223,8 @@
     </section>
 
     <footer class="text-center pb-5">
-      <p>&copy; 2026 - Cátedra de Visualización de Información</p>
+      <p>&copy; 2026 - Proyecto de Cátedra: Visualización de Información</p>
+      <small>Datos extraídos de registros oficiales de AFA y archivos históricos de NOB.</small>
     </footer>
 
   </main>
